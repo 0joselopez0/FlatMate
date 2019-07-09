@@ -1,0 +1,69 @@
+<div class="container fondochat p-2 ">
+<div class="row p-3">
+    <div class="col lecturachat">
+    
+    
+    </div>
+    </div>
+    <div class="row p-2">
+    <div class="col-10 ">
+    
+    <input type="text" id="enviarchat" class="escriturachat">
+    </div>
+         <div class="col-2 text-center p-0 ">
+    <button class="botontipo" onclick="enviarmensaje(this)">></button>
+    
+    </div>
+    </div>
+
+
+</div>
+<script>
+    refrescachat();
+    var posicion=-1;
+   window.setInterval(refrescachat,500);
+   function refrescachat(){
+       
+       console.log('entrando');
+        
+        $.ajax({
+            type: "POST",
+            url: './php/chat.php',
+            data: {
+                cargarchats: 'a'
+            },
+            success: function(response) {
+               mensajes2= JSON.parse(response);
+                console.log(mensajes2);
+                for( i in mensajes2){
+                  if(mensajes2[i].Remitente==idconectado && posicion<i){
+                      $('.lecturachat').append('<div class="mensajemio text-right">'+mensajes2[i].Mensaje+'</div>')
+                      posicion= i;
+                  }else if(mensajes2[i].Remitente==elegido && posicion<i){
+                       $('.lecturachat').append('<div class="mensajeotro text-left">'+mensajes2[i].Mensaje+'</div>')
+                      posicion= i;
+                  }
+                    
+                }
+            }
+        });
+   }
+   
+    function enviarmensaje(boton){
+     
+        var mensajeaenviar= $('#enviarchat').val();
+        console.log(mensajeaenviar);
+        $.ajax({
+            type: "POST",
+            url: './php/chat.php',
+            data: {
+                enviarmsj: 'a', 
+                destino: elegido, 
+                msj: mensajeaenviar
+            },
+            success: function(response) {
+              console.log(response);
+            }
+        });
+    }
+</script>

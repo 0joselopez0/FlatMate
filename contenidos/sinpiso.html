@@ -1,0 +1,86 @@
+<img class="imagentriste" src="./img/triste.png">
+<p class="parrafoestandar">
+    Parece que aún no tienes piso <strong>¡Solicítalo ya!</strong>
+
+</p>
+<div class="row">
+    <div class="col text-center">
+        <button class="btn botontipo" onclick="pregunta()">+</button>
+
+    </div>
+
+
+</div>
+<script>
+    function pregunta() {
+
+        $('#seccionhome').empty();
+        $('#seccionhome').append('<p>Antes de poder solicitar un piso, debemos saber con quien vas a compartirlo:</p><br> <p><strong>Busca a tus compañeros:</strong></p><div id="colegasagregados"></div><br><input id="compiabuscar" class="inputbuscarcompi" type="text"><button onclick="buscarcompi()" class="btn botontipo" ><img class="imgbotonsearch" src="./img/search.png"></button><br><div id="colegasencontrados"></div><br><button onclick="realizarpeticion()" class="btn botontipo" >></button>').fadeIn('slow');
+    }
+
+    function buscarcompi() {
+        var colegabuscado = $('#compiabuscar').val()
+        $.ajax({
+            type: "POST",
+            url: 'php/infopiso.php',
+            data: {
+                buscarcolega: colegabuscado
+            },
+            success: function(response) {
+                if (response == 'nohaycolegas') {
+
+                    $('#colegasencontrados').html('<p>El usuario que buscas no existe</p>');
+
+                } else {
+                    $('#colegasencontrados').html('Usuarios encontrados:<br><br>');
+
+                    var usuariosencontrados = JSON.parse(response);
+                    for (i in usuariosencontrados) {
+
+                        $('#colegasencontrados').append('<div class="row mostrandochumachos"><div class="col"><img class="almedio" src="./img/iconouser.png"></div><div class="col "><p class="almedio">' + usuariosencontrados[i].Username + '</p></div><div class="col"> <button id="' + usuariosencontrados[i].ID + ';' + usuariosencontrados[i].Username + '" class="botontipo" onclick="agregarcolega(this)">+</button></div></div>');
+
+                    }
+                }
+            }
+        });
+
+    }
+
+    function agregarcolega(boton) {
+
+        var infosplit = boton.id.split(";");
+
+
+        $('#colegasagregados').append('<div class="row mostrandochumachos"><div class="col"><img class="almedio" src="./img/iconouser.png"></div><div class="col "><p id="' + infosplit[0] + '" class="almedio">' + infosplit[1] + '</p></div><div class="col"> <button id="" class="botontipo" onclick="eliminarcolega(this)">x</button></div></div>');
+        $('#colegasagregados').children().scroll();
+        $('#colegasencontrados').empty();
+
+    }
+
+    function eliminarcolega(boton) {
+        $(boton).parent().parent().remove();
+    }
+
+    function realizarpeticion() {
+        var conseguirnombre = []
+        for (i = 0; i < $("#colegasagregados > div").length; i++) {
+            conseguirnombre[i] = $('#colegasagregados  div div p:eq(' + i + ')').attr('id');
+
+        }
+        console.log(conseguirnombre);
+        var jsonaenviar = JSON.stringify(conseguirnombre);
+        $.ajax({
+            type: "POST",
+            url: 'php/infopiso.php',
+            data: {
+                prepeticion: conseguirnombre
+            },
+            success: function(response) {
+
+            }
+
+        });
+
+    }
+
+</script>

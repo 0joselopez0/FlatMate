@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col encabezadotuto3">
+        <h1 class="fuenteguapa colorsecundario borde">Tareas</h1>
+        <p class="explicacionseccion">A continuación, podéis insertar las tareas a realizar en el piso junto a su repetición. Recordad que las asignaciones son de carácter semanal.</p>
+        <div id="accordion">
+            <h1 class="">¿Cuando empieza vuestra semana?</h1>
+            <div>
+                <p class="explicacionbote">Elegid el día que queráis establecer como comienzo de la semana</p>
+                <select id="diasemanatareas">
+                    <option value=1>Lunes</option>
+                     <option value=2>Martes</option>
+                     <option value=3>Miércoles</option>
+                     <option value=4>Jueves</option>
+                     <option value=5>Viernes</option>
+                     <option value=6>Sabado</option>
+                     <option value=0>Domingo</option>
+                </select>
+            </div>
+            <h3>Tareas</h3>
+            <div class="">
+                <p class="explicacionbote">Se asume que a mayor esfuerzo, más peso.<br>Los pesos deben ser de 1 a 10</p>
+                <div class="row dibujopaneltarea">
+                    <div class="col-xs-10 m-1 "><input type="text" placeholder="Tarea" class="cien tareaconf"></div>
+                    <div class="col-xs-1 m-1 text-left p-0 digito"><input type="text" class="menos tarearepeticion" placeholder="Repeticion"></div>
+                    <div class="col-xs-1 mt-1 ml-0 mr-0 p-0 text-left digito sinpadding"><input class="aunmenos tareapeso" type="text" placeholder="Peso"></div>
+                    <div class="col-xs-1 mt-1 ml-0 mr-0 p-0 text-left digito sinpadding"><button class="botontipo2" onclick="addtarea()">+</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <button class="botontipoinvertido" onclick="agregartareas()">></button>

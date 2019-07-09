@@ -1,0 +1,88 @@
+<h1 class="fuenteguapa">HOME</h1>
+<hr>
+
+<div class="fondoseccion" id="seccionhome">
+
+
+</div>
+
+<script>
+    $.ajax({
+        type: "POST",
+        url: 'php/contenedorprincipal.php',
+        data: {
+            cargahome: 'a'
+        },
+        success: function(response) {
+            if (response == 'solico') {
+                $('#seccionhome').load('contenidos/sinpiso.html');
+                $('.botonsecciondown').hide();
+            } else if (response == 0) {
+                $('.botonsecciondown').hide();
+                $('#seccionhome').append('Tienes una solicitud de compañero pendiente de: .... <br><br> <button onclick="confirmarpeticioncompanero()" class="botontipo">V</button><button class="botontipo">X</button><br><br> Al aceptar esta solicitud quedas vinculado a ... para la conformación de un piso');
+            } else if (response == 1) {
+                $('.botonsecciondown').hide();
+                $('#seccionhome').append('<strong>¡Has confirmado tu solicitud!</strong><br>Esperando a que el resto de compañeros acepten... <br><br> Una vez que todos los usuarios invitados confirmen la solicitud conjunta. Se le enviará al equipo administrador para asignaros un piso.');
+            } else if (response == 3) {
+                $('.botonsecciondown').hide();
+                $('#seccionhome').append('<strong>¡Todos tus compañeros han confirmado la solicitud!</strong><br>Esperando a que FlatMate os proporcione piso... <br><br> Una vez que el equipo de FlatMate os proporcione piso, podréis configurarlo.');
+            } else if (response == 4) {
+                $('.botonsecciondown').hide();
+                $('#seccionhome').append('<strong>¡Ya tienes piso disponible!</strong><br>Ahora podéis configurarlo <br><br><button class="botontipo" onclick="cargartutorial()">></button><br><br>A la hora de configurarlo se recomienda que lo hagáis todos juntos, ya que, una vez finalizada la configuración, se tiene que validar por todos los compañeros');
+            }else if (response==5){
+                 $.ajax({
+            type: "POST",
+            url: 'php/infopiso.php',
+            data: {
+                cargafullpiso: 'a'
+            },
+            success: function(response) {
+                var fullinfo= JSON.parse(response);
+               if(fullinfo.Inventario==0){
+                   $('#i').hide();
+               }
+                if(fullinfo.Nevera==0){
+                    $('#n').hide();
+                }
+                $('#seccionhome').append('<div class="resumenpiso"> <strong>Piso</strong><br><p>'+ fullinfo.Nombre+'</p><p>'+ fullinfo.Direccion+'</p></div>')
+            }
+        });
+                
+            }else if (response='solico'){
+                $('#seccionhome').load('contenidos/sinpiso.html');
+                      $('.botonsecciondown').hide();
+            }
+        }
+    });
+
+    function confirmarpeticioncompanero() {
+        $.ajax({
+            type: "POST",
+            url: 'php/infopiso.php',
+            data: {
+                aceptacompanero: 'a'
+            },
+            success: function(response) {
+                if (response == 'aceptada') {
+                    $('#seccionhome').html('<strong>¡Has confirmado tu solicitud!</strong><br>Esperando a que el resto de compañeros acepten... <br><br> Una vez que todos los usuarios invitados confirmen la solicitud conjunta. Se le enviará al equipo administrador para asignaros un piso.');
+                } else {
+                    $('#seccionhome').html('error en BBDD');
+                }
+            }
+        });
+
+
+    }
+
+    function cargartutorial() {
+        $('body').fadeOut('1000',
+            function() {
+                $('body').load('tutorial.html',
+                    function() {
+                        $('body').fadeIn('2000');
+                    });
+            });
+
+    }
+
+</script>

@@ -1,0 +1,35 @@
+<h1 class="fuenteguapa">BOTE</h1>
+<hr>
+
+<div class="fondoseccion">
+<p id="tipodebote" class="parrafoanunciante"></p>
+<img id="logobotegrande" src="">  <br>  
+ <p id="cantidad" class="parrafoanunciante"></p>   
+<hr>
+<div class="dinerodiversificado">
+    
+    </div>
+   
+    <div id="espacioparaanadirfondos">
+         <hr>
+    <label>Inserta la cantidad a añadir</label>
+    <input type="text" id="fondosparaanadir">
+    <button class="botontipo" onclick="completaringreso()">+</button>
+    </div>
+     <div id="espacioparaextraerfondos">
+         <hr>
+    <label>Inserta la cantidad a extraer</label>
+         <label class="aclaracion">Al ser un bote físico, y las extracciones dividas en partes iguales. No se puede realizar una compra que deje a menos de 0 a alguno de los inquilinos.</label>
+    <input type="text" id="fondosparaextraer">
+           
+   
+    <button class="botontipo" onclick="completarextraccion()">+</button>
+           <label class="aclaracion">Adjunta el recibo:</label>
+        <button class="botontipo" onclick="adjuntarimagen()">+</button>
+         <img id="recibo" style="width: 20vh;" src="img/recibo.jpg">
+    </div>
+<button class="botontipoinvertido" onclick="anadirfondos()">+</button>
+    <button class="botontipoinvertido" onclick="extraerdinero()">-</button>
+</div>
+
+<script src="js/sec_bote.js"></script>

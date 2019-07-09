@@ -1,0 +1,394 @@
+ @import url('https://fonts.googleapis.com/css?family=Six+Caps&display=swap');
+
+ .fondocentral {
+     background-color: white;
+     -webkit-box-shadow: 1px 2px 44px -8px rgba(0, 0, 0, 0.75);
+     -moz-box-shadow: 1px 2px 44px -8px rgba(0, 0, 0, 0.75);
+     box-shadow: 1px 2px 44px -8px rgba(0, 0, 0, 0.75);
+
+ }
+
+ .todapantalla {
+     height: 100%;
+ }
+
+ body {
+     height: 100vh;
+     background-color: #35464f;
+     overflow-x: hidden;
+ }
+
+ .fondolateral {
+     background-color: #35464f;
+ }
+
+ .paddingtoplogin {
+     padding-top: 16vh;
+
+ }
+
+ .fuenteguapa {
+     font-family: 'Six Caps', sans-serif;
+ }
+
+ .h1login {
+     font-size: 10vh;
+ }
+
+ .butontext {
+     font-size: 4.5vh;
+     width: 70%;
+     height: 6vh;
+     margin: 2vh;
+     border: solid 1px darkgray;
+     color: white;
+     background-color: #383838;
+     padding-bottom: 2vh;
+ }
+
+ .inputlogin {
+     width: 80%;
+     height: 7vh;
+     margin: 3vh;
+     border: solid 1px #8c8b8a;
+     text-align: center;
+
+ }
+
+ hr {
+     border-color: #00918c;
+ }
+
+ .h1contenedorprincipal {
+     font-size: 6vh;
+ }
+
+ .botonseccionup {
+     background-color: #F9AA33;
+     border: 2px solid #F9AA33;
+     border-radius: 0.5vh;
+     border-bottom: 2px solid #F9AA33;
+     border-bottom-left-radius: 0;
+     border-bottom-right-radius: 0;
+     height: 7vh;
+     padding: 1vh;
+
+
+
+ }
+
+ .padreseccion {
+     max-height: 67vh;
+     overflow-y: scroll;
+ }
+
+ .botonsecciondown {
+     background-color: #4A6572;
+     border-radius: 0.5vh;
+     border-bottom-left-radius: 0;
+     border-bottom-right-radius: 0;
+     height: 7vh;
+     color: white;
+     padding: 1vh;
+     border-bottom: 2px solid #F9AA33;
+     border-top: 2px solid #4A6572;
+     cursor: pointer;
+ }
+
+ .botonseccion {}
+
+ .logonotselected {
+     filter: invert(1);
+ }
+
+ .fondoseccion {
+     background-color: #f7f7f7;
+     padding: 2vh;
+     max-height: 50vh;
+     overflow-y: scroll;
+     overflow-x: hidden;
+ }
+
+ .logoconfiguracion {
+     width: 4vh;
+     margin: 2vh;
+
+ }
+
+ .imagentriste {
+     width: 16vh;
+     padding: 2vh;
+ }
+
+ .botontipo {
+     width: 7vh;
+     height: 7vh;
+     border-radius: 50%;
+     background-color: #F9AA33;
+     border: 0;
+     color: #4A6572;
+     font-weight: bolder;
+     margin: 2vh;
+
+
+ }
+
+ .botontipogrande {
+     width: 90%;
+
+
+     background-color: #F9AA33;
+     border: 0;
+     color: #4A6572;
+     font-weight: bolder;
+
+
+
+ }
+
+ .botontipo2 {
+     width: 4vh;
+     height: 4vh;
+     border-radius: 50%;
+     background-color: #F9AA33;
+     border: 0;
+     color: #4A6572;
+     font-weight: bolder;
+     margin-left: 5vh;
+
+
+ }
+
+ .borde {}
+
+ .parrafotutorial {
+     padding: 2vh;
+     background-color: #f7f7f7;
+     margin: 2vh;
+     border: 3px solid white;
+
+ }
+
+ .colorsecundario {
+     color: #4A6572;
+ }
+
+ .colornegro {
+     color: black;
+ }
+
+ .invertido {
+     color: white;
+ }
+
+ .botontipoinvertido {
+     width: 7vh;
+     height: 7vh;
+     border-radius: 50%;
+     background-color: #4A6572;
+     border: 0;
+     color: #F9AA33;
+     font-weight: bolder;
+     margin: 2vh;
+
+
+ }
+
+ .botontipopeque {
+     width: 4vh;
+     height: 4vh;
+     border-radius: 50%;
+     background-color: #4A6572;
+     border: 0;
+     color: #F9AA33;
+     font-weight: bolder;
+
+
+
+ }
+
+ .botontipopeque2 {
+     width: 5vh;
+     height: 5vh;
+     border-radius: 50%;
+     background-color: #4A6572;
+     border: 0;
+     color: #F9AA33;
+     font-weight: bolder;
+
+
+
+ }
+
+ .tareasingular {
+     margin: 1vh;
+     background: white;
+     padding: 1vh;
+ }
+
+ .sinconexion {
+     color: white;
+     background-color: #4A6572;
+     width: 100%;
+
+ }
+
+ .imgbotonsearch {
+     width: 2vh;
+ }
+
+ .inputbuscarcompi {
+     border: 2px solid #4A6572;
+     border-radius: 1vh;
+     margin: 2vh;
+     height: 6vh;
+ }
+
+ .mostrandochumachos {
+     border-bottom: 2px solid gray;
+     padding: 1vh;
+ }
+
+ .almedio {
+     margin-top: 3vh;
+
+ }
+
+ .botonlogout {
+     background-color: transparent;
+     border: 0;
+ }
+
+ .fondocentral {
+     background-color: white;
+     -webkit-box-shadow: 1px 2px 44px -8px rgba(0, 0, 0, 0.75);
+     -moz-box-shadow: 1px 2px 44px -8px rgba(0, 0, 0, 0.75);
+     box-shadow: 1px 2px 44px -8px rgba(0, 0, 0, 0.75);
+
+ }
+
+ .todapantalla {
+     height: 100%;
+ }
+
+ body {
+     height: 100vh;
+     background-color: #00918c;
+ }
+
+ .paddingtoplogin {
+     padding-top: 16vh;
+
+ }
+
+ .fuenteguapa {
+     font-family: 'Six Caps', sans-serif;
+ }
+
+ .h1login {
+     font-size: 10vh;
+ }
+
+ .butontext {
+     font-size: 4.5vh;
+     width: 70%;
+     height: 6vh;
+     margin: 2vh;
+     border: solid 1px darkgray;
+     color: white;
+     background-color: #383838;
+     padding-bottom: 2vh;
+ }
+
+ .inputlogin {
+     width: 80%;
+     height: 7vh;
+     margin: 3vh;
+     border: solid 1px #8c8b8a;
+     text-align: center;
+
+ }
+
+ hr {
+     border-color: #00918c;
+ }
+
+ .fondoseccion {
+     background-color: #f7f7f7;
+
+ }
+
+ .parrafoanunciante {
+     font-weight: bold;
+ }
+
+ .aclaracion {
+     font-size: 2vh;
+ }
+
+ .insideboton {
+     width: 100%;
+     filter: invert(1);
+ }
+
+ .fondochat {
+     background-color: #4A6572;
+ }
+
+ .lecturachat {
+     height: 77vh;
+     background-color: white;
+ }
+
+ .escriturachat {
+     height: 11vh;
+     background-color: white;
+     width: 100%;
+ }
+
+ .mensajemio {
+     width: 60%;
+     padding: 1vh;
+     margin: 1vh;
+     background-color: #F9AA33;
+     margin-left: 40%;
+     margin-right: 0;
+     border-top-left-radius: 1vh;
+     border-top-right-radius: 1vh;
+     border-bottom-left-radius: 1vh;
+     font-weight: bold;
+ }
+
+ .mensajeotro {
+     width: 60%;
+     padding: 1vh;
+     margin: 1vh;
+     background-color: #f7f7f7;
+     margin-left: 0%;
+     margin-right: 40%;
+     border-top-left-radius: 1vh;
+     border-top-right-radius: 1vh;
+     border-bottom-right-radius: 1vh;
+
+ }
+
+ .tareaspropias {
+     max-height: 20vh;
+ }
+
+ .opcionsingularconf {
+
+     width: 100%;
+     height: 7vh;
+     background-color: #f7f7f7;
+     padding-top: 1vh;
+     border-bottom: 1px solid #e2e2e2;
+ }
+
+ .inputfile + label {
+     font-size: 1.25em;
+     font-weight: 700;
+     color: white;
+     background-color: black;
+     display: inline-block;
+ }
